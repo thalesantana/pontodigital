@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Ponto Eletrônico</title>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet"/>
       </Head>

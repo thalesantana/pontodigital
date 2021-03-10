@@ -46,6 +46,19 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@coreui/icons-react@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@coreui/icons-react/-/icons-react-1.1.0.tgz#c1462663f895818cc58adb97a0c19568cbb76254"
+  integrity sha512-OXDg09RsxlK5t6WizudsJUxgzJSAHeytwVG1hqn2ww5zIrJn5++5rNTp95N/kff4/er4f7jspwJ1/7n6mQAz2Q==
+  dependencies:
+    classnames "^2.2.6"
+    prop-types "^15.7.2"
+
+"@coreui/icons@^2.0.0-rc.0":
+  version "2.0.0-rc.0"
+  resolved "https://registry.yarnpkg.com/@coreui/icons/-/icons-2.0.0-rc.0.tgz#b61a503f2a98ea37054be4ab5157ac1aab77d128"
+  integrity sha512-Bg+uQKzEhERRZk1qo8tcR3bjJQDzv6+uDjt5IpjFwqnnnHE4gZE6adZ7jyMYQjgIlelEaS8ZOlE1M7aKHDWZSA==
+
 "@emotion/hash@^0.8.0":
   version "0.8.0"
   resolved "https://registry.yarnpkg.com/@emotion/hash/-/hash-0.8.0.tgz#bbbff68978fefdbe68ccb533bc8cbe1d1afb5413"
@@ -470,7 +483,7 @@ cipher-base@^1.0.0, cipher-base@^1.0.1, cipher-base@^1.0.3:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
 
-classnames@2.2.6:
+classnames@2.2.6, classnames@^2.2.6:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
   integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
