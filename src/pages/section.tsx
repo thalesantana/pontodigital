@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { Cards } from '../components/Cards'
+import { Details } from '../components/Details'
 import styles from '../styles/components/Section.module.css'
 
 
@@ -8,6 +9,7 @@ export default function Section() {
     <div>
         <Head>
         <title>Nome Colaborador</title>
+        <meta name="viewport" content="width=device-width, initial=scale=1.0"/>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet"/>
       </Head>
@@ -36,7 +38,8 @@ export default function Section() {
         </div>
         
         <div className={styles.content}>
-            <Cards />
+            {/* <Cards /> */}
+            <Details />
         </div>
         
     </div>

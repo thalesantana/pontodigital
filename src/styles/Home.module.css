@@ -29,6 +29,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
 .WellcomeContainer{
   align-self: start;
   
@@ -43,12 +44,12 @@
   gap: 10px;
 }
 .WellcomeContainer h1{
-  font-size: 80px;
+  font-size: 5vw;
   display: flex;
   margin: 0;
 }
 .WellcomeContainer p{
-  font-size: 44px;
+  font-size: 2.9vw;
   margin: 0;
 }
 .WellcomeContainer h2{
@@ -58,10 +59,11 @@
 }
 .LoguinContainer{
   background-color: white;
-  min-width: 500px;
+  width: 80%;
   height: 450px;
   border-radius: 4px;
   justify-self: flex-end;
+  
 }
 .LoguinContainer div{
   display: flex;
@@ -89,5 +91,29 @@
   padding: 12px;
   border-radius: 4px;
   cursor: pointer;
-  margin-top: 40px;
+  
+}
+
+@media(max-width:768px){
+  .textContainer{
+    display: grid;
+    min-width: 289px;
+    text-align: center;
+    align-content: center;
+    justify-items: center;
+  }
+  .contentContainer{
+    display: grid;
+    grid-template-columns: repeat(1,minmax(250px, 95% ));
+    justify-items: center;
+    position: absolute;
+    padding: 0;
+  }
+  .WellcomeContainer p{
+    font-size: 1.6rem;
+  }
+  .LoguinContainer{
+    justify-self: center;
+  }
+  
 }
