@@ -24,20 +24,19 @@ export default function Section() {
             </div>     
         </div>
 
-        <div className={styles.SideBar}>
-          <div className={styles.list}>
-            <i className="material-icons">dehaze</i> 
-            <p> Listagem de colaboradores</p>
-            <div className={styles.BorderBotton}/>
+        <div className={styles.Content}>
+          <div className={styles.SideBar}>
+            <div className={styles.list}>
+              <i className="material-icons">dehaze</i> 
+              <p> Listagem de colaboradores</p>
+              <div className={styles.BorderBotton}/>
+            </div>
+            
+            <div className={styles.add}>
+              <i className="material-icons">person_add</i>
+              <p>Adicionar um colaborador</p>
+            </div>
           </div>
-          
-          <div className={styles.add}>
-            <i className="material-icons">person_add</i>
-            <p>Adicionar um colaborador</p>
-          </div>
-        </div>
-        
-        <div className={styles.content}>
             {/* <Cards /> */}
             <Details />
         </div>

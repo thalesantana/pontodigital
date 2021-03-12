@@ -2,7 +2,7 @@ import style from '../styles/components/Details.module.css'
 
 export function Details(){
     return(
-        <div>
+        <div className={style.Profile}>
             <div className={style.Top}>
                 <p>Detalhes do Colaborador</p>
                 <div>

@@ -2,7 +2,7 @@ import style from '../styles/components/Card.module.css'
 
 export function Cards(){
     return(
-        <div>
+        <div className={style.CardsContent}>
             <div className={style.Top}>
                 
                 <p>Listagem de colaboradores</p>

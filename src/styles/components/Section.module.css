@@ -1,3 +1,4 @@
+
 .UserHeader{
     position: absolute;
     display: grid;
@@ -35,10 +36,17 @@
     border-radius: 16px;
 }
 
+.Content{
+    position: absolute;
+    top: 12%;
+    width: 100%;
+    height: 88%;
+}
 .SideBar{
     width: 8.5%;
-    height: 88%;
+    height: 100%;
     bottom: 0;
+    left: 0;
     box-shadow: 4px 4px 3px 2px rgba(217, 217, 217, 0.8);
     position: absolute;
     display: block;
@@ -77,11 +85,10 @@
     line-height: 2.0rem;
 }
 
-.content{
-    position: absolute;
-    left: 10%;
-    top: 12%;
-    width: 90%;
-    height: 85%;
+@media(max-width: 768px){
+    .Content{
+        height: 100%;
+    }
+
 }
 

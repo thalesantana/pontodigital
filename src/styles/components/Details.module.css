@@ -1,3 +1,9 @@
+.Profile{
+    left: 10%;
+    position: absolute;
+    width: 90%;
+    height: 100%;
+}
 .Top{
     width: 100%;
     display: grid;
@@ -50,7 +56,7 @@
 
 .WorkerCard{
     width: 90%;
-    height: 80%;
+    height: 85%;
     box-shadow: 1px 1px 1px 2px rgb(217 217 217 / 50%);
     border-radius: 4px;
     display: grid;
@@ -130,7 +136,7 @@
 .GridSheet{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(250px, 48.5% ));
-    height: 80%;
+    height: 85%;
     gap: 3%;
     row-gap: 6%;
     margin-top: 3%;
@@ -171,4 +177,20 @@
 }
 .DayTimes p{
     font-weight: bold;
+}
+
+@media (max-width: 768px){
+    .GridSheet,
+    .WorkerContent{
+        grid-template-columns: repeat(auto-fit,80%);
+        justify-content: center;
+    }
+    .WorkerCard{
+        width: 100%;
+    }
+    .GridSheet{
+        width: 125%;
+        justify-content: left;
+    }
+    
 }
