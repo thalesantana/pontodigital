@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { Cards } from '../components/Cards'
+import { Create } from '../components/Create'
 import { Details } from '../components/Details'
 import styles from '../styles/components/Section.module.css'
 
@@ -38,6 +39,7 @@ export default function Section() {
             </div>
           </div>
             {/* <Cards /> */}
+            {/*<Details /> */}
             <Details />
         </div>
         

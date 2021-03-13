@@ -64,10 +64,7 @@
     padding: 4%;
     
 }
-.CardContent{
-    width: 80%;
-    height: 80%;
-}
+
 .Header{
     display: flex;
     flex-direction: row;

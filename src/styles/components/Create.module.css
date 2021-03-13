@@ -1,0 +1,146 @@
+.Register{
+    left: 10%;
+    position: absolute;
+    width: 90%;
+    height: 100%;
+}
+.Top{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 15px;
+    border-bottom: 1.5px solid #adadad;
+    width: 97.3%;
+    align-items: center;
+    padding-bottom: 12px;
+}
+.Top p{
+    font-size: 2rem;
+    color: #4a545c;
+    padding-left: 5px;
+    
+}
+.Top div{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+.Top button{
+    border-radius:16px;
+    width: 20%;
+    justify-content: center;
+    font-size: 1.1rem;
+    padding: 1.2% 1%;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+.Top button:first-child{
+    background-color: #f10000;
+}
+.Top button:last-child{
+    background-color: #0066f1;
+}
+
+.CreateCard{
+    padding-top: 2%;
+    display: flex;
+    width: 400px;
+    height: 95%;
+    font-size:1.2em;
+    column-gap: 3%;
+}
+
+.Create{
+    width: 100%;
+    height: 85%;
+    box-shadow: 1px 1px 1px 2px rgb(217 217 217 / 50%);
+    border-radius: 4px;
+    display: block;
+    padding: 4%;
+    
+}
+.Header{
+    display: flex;
+    flex-direction: row;
+}
+.img{
+    width: 50px;
+    height: 50px;
+    background-color: #cccdcf;
+    border-radius: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.img i{
+    color: #b8b8b8;
+}
+.Header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.Name input{
+    color: #d1d1d1;
+    margin-left: 5px;
+    border: none;
+    padding-bottom: 8px;
+    border-bottom: 0.5px solid #e3e3e2;
+}
+
+.Create input::placeholder { /* Chrome/Opera/Safari */
+    color: #d1d1d1;;
+  }
+
+  .Title{
+      font-weight: 700;
+      margin-top: 5%;
+      margin-bottom: 7%;
+  }
+
+.WorkerData{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-self: left;
+    gap: 10%;
+    font-weight: 700;
+    margin-bottom: 10%;
+}
+
+.WorkerData input{
+    width: 100%;;
+    color: #d1d1d1;
+    border: none;
+    padding-bottom: 8px;
+    border-bottom: 0.5px solid #e3e3e2;
+}
+
+.WorkerDuty{
+    display: grid; 
+    grid-template-rows: 30% 0fr 0fr;
+    row-gap:10% ;
+}
+
+.WorkerDuty input{
+    width: 95%;
+    margin-top: 2%;
+    color: #d1d1d1;
+    border: none;
+    padding-bottom: 8px;
+    border-bottom: 0.5px solid #e3e3e2;
+}
+.WorkerDuty h3{
+    color: #0066f1;
+}
+.Times{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
