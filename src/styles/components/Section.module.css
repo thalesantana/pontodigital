@@ -2,7 +2,7 @@
 .UserHeader{
     position: absolute;
     display: grid;
-    grid-template-columns: 8.5% 91.5%;
+    grid-template-columns: 6.5% 92.5%;
     width: 100%;
     height: 12%;
     align-items: center;
@@ -43,7 +43,7 @@
     height: 88%;
 }
 .SideBar{
-    width: 8.5%;
+    width: 6.5%;
     height: 100%;
     bottom: 0;
     left: 0;
@@ -77,12 +77,12 @@
 }
 
 .SideBar p {
-    font-size: 1.2vw;
+    font-size: 0.9vw;
     width: 100%;
     border: 0;
     margin: 0;
     padding-bottom: 20px;
-    line-height: 2.0rem;
+    line-height: 1.2;
 }
 
 @media(max-width: 768px){

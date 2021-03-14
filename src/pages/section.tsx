@@ -38,9 +38,8 @@ export default function Section() {
               <p>Adicionar um colaborador</p>
             </div>
           </div>
-            {/* <Cards /> */}
-            {/*<Details /> */}
-            <Details />
+            <Create />
+
         </div>
         
     </div>
