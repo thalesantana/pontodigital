@@ -1,20 +1,19 @@
-const Worker = require('../Models/Worker')
+import { create } from '../Models/Worker';
 
-module.exports = {
-    async store(req, res){
-        const {
-            name,
-            cpf,
-            email,
-            tel,
-            ocupation,
-            entry_time,
-            exit_time,
-            lunch_entry,
-            lunch_return
-         } = req.body;
+export async function store(req, res) {
+    const {
+        name,
+        cpf,
+        email,
+        tel,
+        ocupation,
+        entry_time,
+        exit_time,
+        lunch_entry,
+        lunch_return
+    } = req.body;
 
-         const worker = await Worker.create(
+    const worker = await create(
         {
             name,
             cpf,
@@ -25,8 +24,7 @@ module.exports = {
             exit_time,
             lunch_entry,
             lunch_return
-         })
+        });
 
-         return res.json(worker);
-    }
-};
+    return res.json(worker);
+}

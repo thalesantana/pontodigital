@@ -1,7 +1,11 @@
-import style from '../styles/components/Card.module.css'
+import style from '../styles/Card.module.css'
+import Nav from '../components/Nav'
+import Link from 'next/link';
 
-export function Cards(){
+export default function Cards(){
     return(
+        <div >
+        <Nav/>
         <div className={style.CardsContent}>
             <div className={style.Top}>
                 
@@ -25,10 +29,14 @@ export function Cards(){
 
             </div>
             <div className={style.Cards}>
-                <div className={style.Card}>
-                    <img src="https://media-exp1.licdn.com/dms/image/C4D35AQG5O5w2-M9McA/profile-framedphoto-shrink_400_400/0/1613088973077?e=1615435200&v=beta&t=zGGBHaLiH7AF9UdB46Jx9XNkzipaC3lxLdG8IoJDkvo"/>
-                    <p>Nome do Colaborador</p>
-                </div>
+                <Link href="/Details">
+                    <a >
+                        <div className={style.Card}>
+                            <img src="https://media-exp1.licdn.com/dms/image/C4D35AQG5O5w2-M9McA/profile-framedphoto-shrink_400_400/0/1613088973077?e=1615435200&v=beta&t=zGGBHaLiH7AF9UdB46Jx9XNkzipaC3lxLdG8IoJDkvo"/>
+                            <p>Nome do Colaborador</p>
+                        </div>
+                    </a>
+                </Link>
                 <div className={style.Card}>
                     <img src="https://media-exp1.licdn.com/dms/image/C4D35AQG5O5w2-M9McA/profile-framedphoto-shrink_400_400/0/1613088973077?e=1615435200&v=beta&t=zGGBHaLiH7AF9UdB46Jx9XNkzipaC3lxLdG8IoJDkvo"/>
                     <p>Nome do Colaborador</p>
@@ -67,5 +75,6 @@ export function Cards(){
                 </div>
             </div>
         </div>
+    </div>
     )
 }

@@ -1,9 +1,6 @@
 import Head from 'next/head'
-import { Cards } from '../components/Cards'
-import { Create } from '../components/Create'
-import { Details } from '../components/Details'
-import styles from '../styles/components/Section.module.css'
-
+import styles from '../styles/components/Nav.module.css'
+import Link from 'next/link';
 
 export default function Section() {
   return (
@@ -28,18 +25,26 @@ export default function Section() {
         <div className={styles.Content}>
           <div className={styles.SideBar}>
             <div className={styles.list}>
-              <i className="material-icons">dehaze</i> 
-              <p> Listagem de colaboradores</p>
+              <Link href="/Cards"> 
+                <a>
+                  <i className="material-icons">dehaze</i> 
+                  <p> Listagem de colaboradores</p>
+                </a>
+              </Link>
               <div className={styles.BorderBotton}/>
             </div>
             
             <div className={styles.add}>
-              <i className="material-icons">person_add</i>
-              <p>Adicionar um colaborador</p>
+              
+                <Link href="/Create">
+                  <a>
+                    <i className="material-icons">person_add</i>
+                    <p>Adicionar um colaborador</p>  
+                  </a>
+                </Link>
+                
             </div>
           </div>
-            <Create />
-
         </div>
         
     </div>
