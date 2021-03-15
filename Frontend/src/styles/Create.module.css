@@ -1,0 +1,161 @@
+.Register{
+    top: 12%;
+    left: 10%;
+    position: absolute;
+    width: 90%;
+    height: 88%;
+}
+.Top{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 15px;
+    border-bottom: 1.5px solid #adadad;
+    width: 97.3%;
+    align-items: center;
+    padding-bottom: 12px;
+}
+.Top p{
+    font-size: 2rem;
+    color: #4a545c;
+    padding-left: 5px;
+    
+}
+.Top div{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+.Top button{
+    border-radius:16px;
+    width: 20%;
+    justify-content: center;
+    font-size: 1.2em;
+    padding: 1.2% 1%;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+.Top button:first-child{
+    background-color: #f10000;
+}
+.Top button:last-child{
+    background-color: #0066f1;
+}
+
+.CreateCard{
+    padding-top: 2%;
+    display: flex;
+    width: 350px;
+    height: 460px;
+    font-size:1.2em;
+}
+
+.Create{
+    width: 100%;
+    height: 100%;
+    box-shadow: 1px 1px 1px 2px rgb(217 217 217 / 50%);
+    border-radius: 4px;
+    display: flex;
+    padding: 4%;
+    padding-left: 6%;
+}
+.Create input::placeholder { /* Chrome/Opera/Safari */
+    color: #d1d1d1;
+    font-size: 0.9em;
+ }
+
+.Header{
+    display: grid;
+    grid-template-columns: 0fr 1fr;
+    align-items: center;
+}
+.img{
+    width: 50px;
+    height: 50px;
+    background-color: #cccdcf;
+    border-radius: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+.img span{
+    color: #b8b8b8;
+    font-size: 25px;
+}
+.img input{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    font-size: 0;
+    opacity: 0;
+    position: absolute;
+    left: -5px;
+    
+}
+
+.Name input{
+    color: #d1d1d1;
+    margin-left: 10px;
+    border: none;
+    padding-bottom: 8px;
+    border-bottom: 0.5px solid #e3e3e2;
+    width: 96%;
+}
+.Name input::placeholder { /* Chrome/Opera/Safari */
+    font-size: 1.1em;
+ }
+
+.Title{
+      font-weight: 700;
+      margin-top: 5%;
+      margin-bottom: 7%;
+}
+
+.WorkerData{
+    display: grid;
+    grid-template-columns: 0.80fr 1fr;
+    align-self: left;
+    row-gap: 10%;
+    column-gap: 10%;
+    font-weight: 700;
+    margin-bottom: 10%;
+}
+
+.WorkerData input{
+    width: 100%;
+    color: #d1d1d1;
+    border: none;
+    margin-top: 5px;
+    padding-bottom: 6px;
+    border-bottom: 0.5px solid #e3e3e2;
+}
+
+.WorkerDuty{
+    display: grid; 
+    grid-template-rows: 30% 0fr 0fr;
+    row-gap:10% ;
+}
+
+.WorkerDuty input{
+    width: 100%;
+    margin-top: 5%;
+    color: #d1d1d1;
+    border: none;
+    padding-bottom: 6px;
+    border-bottom: 0.5px solid #e3e3e2;
+}
+.WorkerDuty h3{
+    color: #0066f1;
+}
+.Times{
+    display: grid;
+    column-gap: 5%;
+    grid-template-columns: 1fr 1fr;
+}
+
