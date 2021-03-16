@@ -1,9 +1,23 @@
 import React, {Component} from 'react'
 import style from '../styles/Details.module.css'
+import api from '../services/api';
 
-
-export default class Details extends Component{
-
+ class Details extends Component{
+    
+    async componentDidMount() {
+        const { match: { params } } = this.props;
+      
+       const response =  await api.get(`/Workers/${params.id}`)
+         .then(({ data: worker}) => {
+           console.log('worker', worker);
+      
+            this.setState({worker});
+            return worker
+          });
+          
+          return response
+      }
+      
     render(){
         return(
             <div >
@@ -17,7 +31,8 @@ export default class Details extends Component{
                     </div>
     
                     <div className={style.WorkerContent}>
-    
+                        
+                    
                         <div className={style.WorkerCard}>
 
                                 <div className={style.Header}>
@@ -25,7 +40,7 @@ export default class Details extends Component{
                                         <img src="https://media-exp1.licdn.com/dms/image/C4D35AQG5O5w2-M9McA/profile-framedphoto-shrink_400_400/0/1613088973077?e=1615435200&v=beta&t=zGGBHaLiH7AF9UdB46Jx9XNkzipaC3lxLdG8IoJDkvo" alt="Profile Img"/>
                                     </div>
                                     <div className={style.Name}>
-                                        <p>Nome do Colaborador</p>
+                                        <p>name</p>
                                         <span>Cadastrado em 28/12/2020</span>
                                     </div>
                                 </div>
@@ -60,8 +75,7 @@ export default class Details extends Component{
                                 </div>
                             
                         </div>
-                        
-                        <div className={style.TimeSheet}>
+                                      <div className={style.TimeSheet}>
                             <div className={style.TimeTitle}><p>Histórico de entrada e saída</p></div>
                             <div className={style.GridSheet}>
     
@@ -105,3 +119,5 @@ export default class Details extends Component{
         )
     }
 }
+
+export default Details;

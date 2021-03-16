@@ -25,7 +25,7 @@ export default function Nav() {
         <div className={styles.Content}>
           <div className={styles.SideBar}>
             <div className={styles.list}>
-              <Link to="/Cards">
+              <Link to="/Workers">
                 <i className="material-icons">dehaze</i> 
                 <p> Listagem de colaboradores</p>
               </Link>

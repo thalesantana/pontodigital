@@ -9,7 +9,7 @@ class Cards extends Component{
     };
             
     async componentDidMount(){
-        const response =  await api.get('Cards');
+        const response =  await api.get('Workers');
         
         this.setState({ datas: response.data}) 
         //console.log(datas: response.data)

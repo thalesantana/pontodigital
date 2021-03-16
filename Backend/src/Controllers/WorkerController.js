@@ -6,7 +6,15 @@ module.exports = {
         
         return res.json(Cards)
     },
+    async show(req, res){
+        const worker_id = req.params.id
+        const id = await Worker.findByPk(worker_id);
+       
 
+        if(!id) return res.status(400).send('Worker dont found');
+
+        return res.json(id)
+    },
     async store(req, res) {
         const {
             name,
