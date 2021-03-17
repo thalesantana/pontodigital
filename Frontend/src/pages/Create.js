@@ -32,10 +32,12 @@ export default class Create extends Component{
         data.append('lunch_return', this.state.lunch_return);
 
         
-        console.log(this.state)
-        await api.post('Post', data)
+        //console.log(this.state)
+        const results = await api.post('Post', data)
+        const id = results.data.id
+        console.log(id)
         
-        this.props.history.push('/Cards');
+        this.props.history.push(`/Workers/${id}`);
     }
     handleImageChange = e => {
         this.setState({image: e.target.files[0]})
@@ -65,10 +67,9 @@ export default class Create extends Component{
                                     <div className={style.Header}>
                                         <div className={style.img}>
                                             <input 
-                                                onChange={this.handleChange} 
-                                                type="file" 
-                                                name="image" 
-                                                //accept="image/*"
+                                                onChange={this.handleImageChange} 
+                                                type="file"
+                                                accept="image/*"
                                             />
                                             <span className="material-icons" >
                                                 camera_alt

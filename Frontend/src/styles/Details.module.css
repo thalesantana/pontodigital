@@ -71,6 +71,7 @@
     flex-direction: row;
 }
 .WorkerCard img{
+    width: 50px;
     height: 50px;
     border-radius: 32px;
 }
@@ -133,8 +134,8 @@
 
 .GridSheet{
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px, 48.5% ));
-    height: 85%;
+    grid-template-columns: 1fr 1fr;
+    max-height: 85%;
     gap: 3%;
     row-gap: 6%;
     margin-top: 3%;

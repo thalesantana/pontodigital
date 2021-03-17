@@ -38,10 +38,12 @@ class Cards extends Component{
             <div >
                 <section className="Cards">
                     {this.state.datas.map(Card => (
-                        <div className="Card" key={Card.id}>
+                        <a href={`Workers/${Card.id}`} key={Card.id}>
+                        <div className="Card"  >
                             <img src={`http://localhost:3333/files/${Card.image}`} alt ="Worker_Img"/>
                             <p>{Card.name}</p>
                         </div>
+                        </a>
                     ))}
                 </section>
             </div>
