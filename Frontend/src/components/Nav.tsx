@@ -18,7 +18,7 @@ export default function Nav() {
               <i className="material-icons" >notifications_none</i>
               <i className="material-icons">more_horiz</i>
               <p>Nome da pessoa</p>
-              <img src="https://media-exp1.licdn.com/dms/image/C4D35AQG5O5w2-M9McA/profile-framedphoto-shrink_400_400/0/1613088973077?e=1615435200&v=beta&t=zGGBHaLiH7AF9UdB46Jx9XNkzipaC3lxLdG8IoJDkvo"/>
+              <img src="https://avatars.githubusercontent.com/u/72896088?s=460&u=dfa321b325c407f8101a92c90dbc7087d2674c34&v=4://media-exp1.licdn.com/dms/image/C4D35AQG5O5w2-M9McA/profile-framedphoto-shrink_400_400/0/1613088973077?e=1615435200&v=beta&t=zGGBHaLiH7AF9UdB46Jx9XNkzipaC3lxLdG8IoJDkvo"/>
             </div>     
         </div>
 
