@@ -11,11 +11,12 @@ import { useParams } from "react-router-dom";
     const [workers, setWorkers] = useState([])
 
     useEffect(() => {
-        api.get(`/Workers/${id}`).then((response)=>{
-            setWorkers([response.data])
+        api.get(`/Worker/${id}`).then((response)=>{
+                setWorkers([response.data])
         })
         
     }, [id])
+    console.log(workers.length)
     let date,entry_time, exit_time, lunch_entry,lunch_return = ''
    
     workers.map(work => (
@@ -36,7 +37,7 @@ import { useParams } from "react-router-dom";
                         <button>Editar colaborador</button>
                     </div>
                 </div>
-                {workers.map((worker,index) =>(
+                {workers.map((worker) =>(
                 <div className={style.WorkerContent} key={worker.id}>
 
                     

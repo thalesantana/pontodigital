@@ -6,7 +6,7 @@ export default function Nav() {
   return (
     <div>
         <header>
-        <title>Nome Colaborador</title>
+        <title>Ponto Digital</title>
         <meta name="viewport" content="width=device-width"/>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet"/>

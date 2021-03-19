@@ -18,6 +18,26 @@ module.exports = {
 
         return res.json(id)
     },
+    async put(req,res){
+        Worker.update({
+            data: req.body
+        },
+        {
+            where: { id: req.params.id}
+        }).then(() => Worker.update({
+                name,
+                image,
+                cpf,
+                email,
+                tel,
+                ocupation,
+                entry_time,
+                exit_time, 
+                lunch_entry,
+                lunch_return
+        }))
+        return res.json(Worker); 
+    },
     async store(req, res) {
         const {
             name,

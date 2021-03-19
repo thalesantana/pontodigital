@@ -7,7 +7,7 @@ const routes = express.Router();
 const upload = multer(uploadConfig);
 
 routes.get('/Workers', WorkerController.index);
-routes.get('/Workers/:id', WorkerController.show);
+routes.get('/Worker/:id', WorkerController.show);
 routes.post('/Post',upload.single('image'), WorkerController.store);
-
+routes.put('/Edit/:id', WorkerController.put)
 module.exports = routes; 
