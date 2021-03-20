@@ -10,7 +10,9 @@ module.exports = {
         return res.json(Cards)
     },
     async show(req, res){
+        console.log(req.params)
         const worker_id = req.params.id
+        console.log( worker_id)
         const id = await Worker.findByPk(worker_id);
        
 

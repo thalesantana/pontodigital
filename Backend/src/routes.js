@@ -3,11 +3,15 @@ const multer = require('multer')
 const WorkerController = require('./Controllers/WorkerController')
 const uploadConfig = require('./config/upload')
 
+const TimesController = require('./Controllers/TimesController')
+
 const routes = express.Router();
 const upload = multer(uploadConfig);
 
-routes.get('/Workers', WorkerController.index);
-routes.get('/Worker/:id', WorkerController.show);
-routes.post('/Post',upload.single('image'), WorkerController.store);
-routes.put('/Edit/:id', WorkerController.put)
+routes.get('/workers', WorkerController.index);
+routes.get('/workers/:id', WorkerController.show);
+routes.post('/post',upload.single('image'), WorkerController.store);
+routes.put('/edit/:id', WorkerController.put)
+
+routes.post('/worker/:worker_id/registrer',TimesController.store)
 module.exports = routes; 

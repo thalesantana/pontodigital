@@ -12,7 +12,7 @@ function Routes(){
             <Route path="/" exact component={Index} />
             <Route path="/Create" exact component={Create} />
             <Route path="/Workers" exact component={Cards} />
-            <Route path="/Edit/:id" exact component={Details} />
+            <Route path="/workers/:id" exact component={Details} />
         </Switch>
     );
 }

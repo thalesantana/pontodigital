@@ -2,61 +2,44 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('workers', { 
+    await queryInterface.createTable('times', { 
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false,
       },
-      image:{
-        type: Sequelize.STRING,
-        allowNull: true,
-        defaultValue: null,
-      },
-      name:{
-        type: Sequelize.STRING,
+      worker_id :{
+        type: Sequelize.INTEGER,
         allowNull: false,
+        references: { model: 'workers', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
       },
-      cpf: {
-        type: Sequelize.BIGINT(11),
-        allowNull: false,
-      },
-      email:{
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      pass:{
-        type: Sequelize.STRING,
-        allowNull: true,
-      },
-      tel:{
-        type: Sequelize.BIGINT(11),
-        allowNull: false,
-      },
-      ocupation:{
-        type: Sequelize.TEXT,
+      day:{
+        type: Sequelize.DATE,
         allowNull: false,
       },
       entry_time:{
         type: Sequelize.TIME,
-        allowNull: false,
-        defaultValue: "00:00:00",
+        allowNull: true,
+      
       },
       exit_time:{
         type: Sequelize.TIME,
-        allowNull: false,
-        defaultValue: "00:00:00",
+        allowNull: true,
       },
       lunch_entry:{
         type: Sequelize.TIME,
-        allowNull: false,
-        defaultValue: "00:00:00",
+        allowNull: true,
       },
       lunch_return:{
         type: Sequelize.TIME,
-        allowNull: false,
-        defaultValue: "00:00:00",
+        allowNull: true,
+      },
+      location:{
+        type: Sequelize.STRING,
+        allowNull: true,
       },
       created_at: {
         type: 'TIMESTAMP',
@@ -73,6 +56,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-     await queryInterface.dropTable('workers');
+     await queryInterface.dropTable('times');
   }
 };
