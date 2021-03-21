@@ -1,58 +1,26 @@
+import React, {useState, useEffect} from 'react'
 import style from '../styles/Create.module.css'
-import React, {Component} from 'react'
 import api from '../services/api'
+import { useParams } from "react-router-dom";
 
-export default class Edit extends Component{
+export default function Edit (){
+    const { id } = useParams();
+    
+    const [workers, setWorkers] = useState([])
 
-    state ={
-        image: null,
-        name: '',
-        cpf: '',
-        email: '',
-        tel: '',
-        ocupation: '',
-        entry_time: '',
-        exit_time: '',
-        lunch_entry:'',
-        lunch_return: '',
-    }
-    handleSubmit = async e =>{
-        e.preventDefault();
+    useEffect(() => {
+        api.get(`/worker/${id}`).then((response)=>{
+                setWorkers([response.data])
+                //console.log([response.data])
+        })
         
-        const data = new FormData();
+    }, [id])
 
-        data.append('image', this.state.image);
-        data.append('name', this.state.name);
-        data.append('cpf', this.state.cpf);
-        data.append('email', this.state.email);
-        data.append('tel', this.state.tel);
-        data.append('ocupation', this.state.ocupation);
-        data.append('entry_time', this.state.entry_time);
-        data.append('exit_time', this.state.exit_time);
-        data.append('lunch_entry', this.state.lunch_entry);
-        data.append('lunch_return', this.state.lunch_return);
-
-        
-        //console.log(this.state)
-        const results = await api.put('/edit/:id', data)
-        const id = results.data.id
-        console.log(id)
-        
-        this.props.history.push(`/Edit/${id}`);
-    }
-    handleImageChange = e => {
-        this.setState({image: e.target.files[0]})
-    }
-
-    handleChange = e =>{
-       this.setState({ [e.target.name]: e.target.value }) 
-    }
-
-    render(){
+    console.log(workers)
         return(
             <div>
                 <div className={style.Register}>
-                    <form  method="PUT" onSubmit={this.handleSubmit}>
+                    <form  method="PUT">
                         <div className={style.Top}>
                             <p>Adicionar Colaborador</p>
                             <div>
@@ -62,15 +30,16 @@ export default class Edit extends Component{
                         </div>
     
                         <div className={style.CreateCard}>
-    
-                            <div className={style.Create}>
-                                <div>
+                        
+                            <div className={style.Create} >
+                            {workers.map((worker) =>(
+                                <div key={worker.id}>
                                     <div className={style.Header}>
                                         <div className={style.img}>
                                             <input 
-                                                onChange={this.handleImageChange} 
                                                 type="file"
                                                 accept="image/*"
+                                                
                                             />
                                             <span className="material-icons" >
                                                 camera_alt
@@ -78,13 +47,13 @@ export default class Edit extends Component{
                                             
                                         </div>
                                         <div className={style.Name}>
+                                        
                                             <input 
-                                                onChange={this.handleChange} 
                                                 type="text" 
                                                 name="name" 
                                                 placeholder="Nome do colaborador"
-                                                value={this.state.name}
-                                            />
+                                                value={worker.name}
+                                            /> 
                                         </div>
                                     </div>
                                     <p className={style.Title}>Informações </p>
@@ -92,31 +61,31 @@ export default class Edit extends Component{
                                         <div>
                                             <h3>CPF</h3>
                                             <input 
-                                            onChange={this.handleChange} 
+                                            
                                             type="number" 
                                             name="cpf" 
                                             placeholder="Digite o CPF"
-                                            value={this.state.number}
+                                            defaltvalue={worker.cpf}
                                         />
                                         </div>
                                         <div>
                                             <h3>E-mail</h3>
                                             <input 
-                                                onChange={this.handleChange} 
+                                                
                                                 type="email" 
                                                 name="email" 
                                                 placeholder="Digite o Email do colaborador"
-                                                value={this.state.email}
+                                                defaltvalue={worker.email}
                                             />
                                         </div>
                                         <div>
                                             <h3>Telefone</h3>
                                             <input 
-                                                onChange={this.handleChange} 
+                                                
                                                 type="tel" 
                                                 name="tel" 
                                                 placeholder="(xx) xxxx-xxxx"
-                                                value={this.state.tel}
+                                                defaltvalue={worker.tel}
                                             />
                                         </div>
                                     </div> 
@@ -126,11 +95,11 @@ export default class Edit extends Component{
                                             <h3>Ocupação</h3>
                                             <div className={style.Times}>
                                                 <input 
-                                                    onChange={this.handleChange} 
+                                                    
                                                     type="text" 
                                                     name="ocupation"
                                                     placeholder="Ocupação do colaborador?"
-                                                    value={this.state.ocupation}
+                                                    defaltvalue={worker.ocupation}
                                                 />
                                             </div>
                                         </div>
@@ -139,18 +108,18 @@ export default class Edit extends Component{
                                             <h3>Horario de expediente</h3>
                                             <div className={style.Times}>
                                                 <input 
-                                                    onChange={this.handleChange} 
+                                                    
                                                     type="text" 
                                                     name="entry_time" 
                                                     placeholder="Horario de entrada"
-                                                    value={this.state.entry_time}
+                                                    defaltvalue={worker.entry_time}
                                                 />
                                                 <input 
-                                                    onChange={this.handleChange} 
+                                                    
                                                     type="text"  
                                                     name="exit_time" 
                                                     placeholder="Horario de saída"
-                                                    value={this.state.exit_time}
+                                                    defaltvalue={worker.lunch_time}
                                                 />
                                             </div>
                                         </div>
@@ -158,28 +127,30 @@ export default class Edit extends Component{
                                             <h3>Horário de almoço</h3>
                                             <div className={style.Times}>
                                                 <input 
-                                                    onChange={this.handleChange} 
+                                                    
                                                     type="text" 
                                                     name="lunch_entry" 
                                                     placeholder="Horario de entrada"
-                                                    value={this.state.lunch_entry}
+                                                    defaltvalue={worker.lunch_entry}
                                                 />
                                                 <input 
-                                                    onChange={this.handleChange} 
+                                                    
                                                     type="text" 
                                                     name="lunch_return" 
                                                     placeholder="Horario de saída"
-                                                    value={this.state.lunch_return}
+                                                    defaltvalue={worker.lunch_return}
                                                 />
                                             </div>    
                                         </div>
                                     </div>  
                                 </div>
+                                ))}
                             </div>   
+                            
                         </div>
                     </form>
                 </div>
             </div>
         )
-    }
+    
 }

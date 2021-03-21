@@ -38,7 +38,7 @@ class Cards extends Component{
             <div >
                 <section className="Cards">
                     {this.state.datas.map(Card => (
-                        <a href={`Edit/${Card.id}`} key={Card.id}>
+                        <a href={`edit/${Card.id}`} key={Card.id}>
                         <div className="Card"  >
                             <img src={`http://localhost:3333/files/${Card.image}`} alt ="Worker_Img"/>
                             <p>{Card.name}</p>

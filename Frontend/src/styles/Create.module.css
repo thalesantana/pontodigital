@@ -100,7 +100,7 @@
 }
 
 .Name input{
-    color: #d1d1d1;
+    color: black;
     margin-left: 10px;
     border: none;
     padding-bottom: 8px;
@@ -129,7 +129,7 @@
 
 .WorkerData input{
     width: 100%;
-    color: #d1d1d1;
+    color: black;
     border: none;
     margin-top: 5px;
     padding-bottom: 6px;
@@ -145,7 +145,7 @@
 .WorkerDuty input{
     width: 100%;
     margin-top: 5%;
-    color: #d1d1d1;
+    color: black;
     border: none;
     padding-bottom: 6px;
     border-bottom: 0.5px solid #e3e3e2;
