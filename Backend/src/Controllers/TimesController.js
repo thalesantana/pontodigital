@@ -20,7 +20,7 @@ module.exports = {
             lunch_return,
             location
         } = req.body;
- 
+        //console.log()
         const times = await Times.create({
             worker_id,
             day,

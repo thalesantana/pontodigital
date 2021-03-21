@@ -18,7 +18,7 @@ module.exports = {
       },
       day:{
         type: Sequelize.DATE,
-        allowNull: false,
+        allowNull: true,
       },
       entry_time:{
         type: Sequelize.TIME,
@@ -59,3 +59,4 @@ module.exports = {
      await queryInterface.dropTable('times');
   }
 };
+

@@ -4,11 +4,11 @@ class Times extends Model {
     static init(sequelize){
         super.init({
             day: DataTypes.STRING,
-            entry_time: DataTypes.STRING,
-            exit_time: DataTypes.STRING,
-            lunch_entry: DataTypes.STRING,
-            lunch_return: DataTypes.STRING,
-            location: DataTypes.STRING,
+            entry_time: DataTypes.TIME,
+            exit_time: DataTypes.TIME,
+            lunch_entry: DataTypes.TIME,
+            lunch_return: DataTypes.TIME,
+            location: DataTypes.TIME,
         },{
             sequelize
         })
