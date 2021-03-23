@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/Card.css';
 import api from '../services/api';
-
+//import {css} from '@emotion/css'
 
 class Cards extends Component{
     state = {
@@ -14,7 +14,7 @@ class Cards extends Component{
         this.setState({ datas: response.data}) 
         //console.log(datas: response.data)
     }
-
+    
     render(){
         return(
             <div className="CardsContent">
@@ -38,7 +38,7 @@ class Cards extends Component{
             <div >
                 <section className="Cards">
                     {this.state.datas.map(Card => (
-                        <a href={`edit/${Card.id}`} key={Card.id}>
+                        <a href={`worker/${Card.id}`} key={Card.id}>
                         <div className="Card"  >
                             <img src={`http://localhost:3333/files/${Card.image}`} alt ="Worker_Img"/>
                             <p>{Card.name}</p>
