@@ -36,7 +36,7 @@ export default class Create extends Component {
     const id = results.data.id;
     console.log(id);
 
-    this.props.history.push(`/Workers/${id}`);
+    this.props.history.push(`/worker/${id}`);
   };
   handleImageChange = (e) => {
     this.setState({ image: e.target.files[0] });
