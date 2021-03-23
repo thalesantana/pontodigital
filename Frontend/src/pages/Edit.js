@@ -9,7 +9,7 @@ export default function Edit (){
     const [workers, setWorkers] = useState([])
 
     useEffect(() => {
-        api.get(`/worker/${id}`).then((response)=>{
+        api.get(`/worker/edit/${id}`).then((response)=>{
                 setWorkers([response.data])
                 //console.log([response.data])
         })
