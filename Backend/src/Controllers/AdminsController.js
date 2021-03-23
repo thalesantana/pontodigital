@@ -4,10 +4,23 @@ const path = require('path');
 const fs= require('fs');
 
 module.exports = {
-    async index(req, res){
-        const Cards = await Admin.findAll();
+    async indexAll(req, res){
+        const admins = await Admin.findAll({attributes: ['id','email', 'pass']});
         
-        return res.json(Cards)
+        return res.json(admins)
+    },
+    async login(req, res){
+        const admins = await Admin.findAll({attributes: ['id','email', 'pass']});
+        const {email, pass} = req.body;
+        admins.map((admin)=>{
+            if( email === admin.email && pass === admin.pass){
+              return res.status(200).send('Login ok')
+              
+           }else{
+            return res.status(400).send("Email e senha ou usuário não existe!")
+           }
+        })
+        return res.json(admins)
     },
     async show(req, res){
         const admin_id = req.params.id
