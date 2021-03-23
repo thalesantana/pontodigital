@@ -5,7 +5,7 @@ const fs= require('fs');
 
 module.exports = {
     async indexAll(req, res){
-        const admins = await Admin.findAll({attributes: ['id','email', 'pass']});
+        const admins = await Admin.findAll();
         
         return res.json(admins)
     },
