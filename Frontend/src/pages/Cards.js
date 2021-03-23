@@ -1,21 +1,26 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/Card.css';
 import api from '../services/api';
 //import {css} from '@emotion/css'
 
-class Cards extends Component{
-    state = {
-        datas: [],
-    };
-            
-    async componentDidMount(){
-        const response =  await api.get('Workers');
-        
-        this.setState({ datas: response.data}) 
-        //console.log(datas: response.data)
-    }
+export default function Cards() {
+    const [workers, setWorkers] = useState([])
+    const[search, setSearch] = useState('')
+    const [filteredWorkers,setfilteredWorkers] = useState([])
     
-    render(){
+    useEffect(() =>{
+        api.get(`workers`).then((response)=>{
+            setWorkers(response.data)
+    })
+        //console.log(datas: response.data)
+    }, [])
+    useEffect(() => {
+        setfilteredWorkers(
+            workers.filter(worker =>{
+                return worker.name.toLowerCase().includes(search.toLowerCase())})
+        )
+    }, [search,workers])
+
         return(
             <div className="CardsContent">
                 <div className="Top"> 
@@ -31,13 +36,13 @@ class Cards extends Component{
                         
                         <div className="Search">
                             <i className="material-icons"> search</i>
-                            <input type="search" name="search" placeholder="Procurar" className="InputSearch"/>
+                            <input onChange={e => setSearch(e.target.value)} type="search" name="search" placeholder="Procurar" className="InputSearch"/>
                         </div>
                     </div>
             </div>
             <div >
                 <section className="Cards">
-                    {this.state.datas.map(Card => (
+                    {filteredWorkers.map((Card) =>(
                         <a href={`worker/${Card.id}`} key={Card.id}>
                         <div className="Card"  >
                             <img src={`http://localhost:3333/files/${Card.image}`} alt ="Worker_Img"/>
@@ -48,9 +53,6 @@ class Cards extends Component{
                 </section>
             </div>
             </div>
-        )
-    }
-   
+        )  
 }
 
-export default Cards;
