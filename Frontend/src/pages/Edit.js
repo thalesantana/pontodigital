@@ -16,7 +16,7 @@ export default function Edit (){
         
     }, [id])
 
-    console.log(workers)
+    console.log(workers[0])
         return(
             <div>
                 <div className={style.Register}>
@@ -65,7 +65,9 @@ export default function Edit (){
                                             type="number" 
                                             name="cpf" 
                                             placeholder="Digite o CPF"
+                                            value={worker.cpf}
                                             defaltvalue={worker.cpf}
+                                            
                                         />
                                         </div>
                                         <div>

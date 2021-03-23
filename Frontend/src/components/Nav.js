@@ -1,8 +1,30 @@
 /* eslint-disable jsx-a11y/alt-text */
-import styles from '../styles/components/Nav.module.css'
+import '../styles/components/Nav.css';
 import { Link } from 'react-router-dom'
+import {css} from '@emotion/css'
+import React,{ useState } from 'react'
+export default function  Nav() {
+  
 
-export default function Nav() {
+    const [display, setDisplay] = useState("block")
+
+    const setStyle = (status) => {
+      if(display === "block")
+        setDisplay(status)
+      else if(display === "none")
+        setDisplay("block")
+    }
+
+    const SideBar = css`  
+    width: 6.5%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    box-shadow: 4px 4px 3px 2px rgba(217, 217, 217, 0.8);
+    position: absolute;
+    display:${display};
+    text-align: center;`
+  
   return (
     <div>
         <header>
@@ -12,8 +34,8 @@ export default function Nav() {
           rel="stylesheet"/>
       </header>
       
-        <div className={styles.UserHeader}>
-            <span className="material-icons">dehaze</span> 
+        <div className= "UserHeader">
+            <span onClick={() => setStyle("none")} className="material-icons">dehaze</span> 
             <div>
               <i className="material-icons" >notifications_none</i>
               <i className="material-icons">more_horiz</i>
@@ -22,17 +44,17 @@ export default function Nav() {
             </div>     
         </div>
 
-        <div className={styles.Content}>
-          <div className={styles.SideBar}>
-            <div className={styles.list}>
+        <div className="Content">
+          <div className={SideBar}>
+            <div className="list">
               <Link to="/Workers">
                 <i className="material-icons">dehaze</i> 
                 <p> Listagem de colaboradores</p>
               </Link>
-              <div className={styles.BorderBotton}/>
+              <div className="BorderBotton"/>
             </div>
             
-            <div className={styles.add}>
+            <div className="add">
               <Link to="/Create">
                 <i className="material-icons">person_add</i>
                 <p>Adicionar um colaborador</p>  
