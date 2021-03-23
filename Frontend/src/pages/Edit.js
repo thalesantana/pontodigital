@@ -32,7 +32,7 @@ export default function Edit (){
                         <div className={style.CreateCard}>
                         
                             <div className={style.Create} >
-                            {workers.map((worker) =>(
+                         {workers.map((worker) =>(
                                 <div key={worker.id}>
                                     <div className={style.Header}>
                                         <div className={style.img}>

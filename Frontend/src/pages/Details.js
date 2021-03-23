@@ -2,7 +2,7 @@
 import React, {useState, useEffect} from 'react'
 import style from '../styles/Details.module.css'
 import api from '../services/api';
-import { useParams } from "react-router-dom";
+import { useParams,Link } from "react-router-dom";
 //const {date} = require('../lib/utils')
 
  export default function Worker(){
@@ -29,15 +29,16 @@ import { useParams } from "react-router-dom";
     
     return(
         <div >
+            {workers.map((worker) =>(
             <div className={style.Profile}>
                 <div className={style.Top}>
                     <p>Detalhes do Colaborador</p>
                     <div>
                         <button>Inativar colaborador</button>
-                        <button>Editar colaborador</button>
+                       <Link to={`edit/${worker.id}`}><div><button>Editar colaborador</button></div></Link> 
                     </div>
                 </div>
-                {workers.map((worker) =>(
+                
                 <div className={style.WorkerContent} key={worker.id}>
 
                     
@@ -129,9 +130,9 @@ import { useParams } from "react-router-dom";
 
                     </div>   
                 </div>
-                ))}
+                
             </div>
-            
+        ))}
         </div>
     )
 
