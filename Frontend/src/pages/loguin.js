@@ -1,6 +1,39 @@
+import React,{ useEffect, useState } from 'react'
+//import { Link } from 'react-router-dom'
+import api from '../services/api'
 import style from '../styles/Login.module.css'
 
 export default function Home() {
+  const [admins,setAdmins] = useState([])
+  const [data, setData] = useState({email: "", pass: ""})
+  const [user, setUser] = useState({email: "", pass: ""})
+  const [error, setError] = useState("")
+
+  useEffect(() => {
+    api.get('admins').then((response)=>{
+      setAdmins(response.data)
+    })
+  }, [])
+
+  const submitHandler = e => {
+    e.preventDefault()
+
+  }
+  const Login = data =>{
+  admins.map((admin)=>{
+     if( data.email === admin.email && data.pass === admin.pass){
+       console.log('Login ok')
+       setUser({
+         email:data.email,
+         pass:data.pass
+       }, []);
+    }else{
+      console.log("Email e senha ou usuário não existe!")
+    setError("Email e senha ou usuário não existe!")
+    }
+  })
+  }
+  //console.log(admins)
   return (
     <div className={style.container}>
       <header>
@@ -25,21 +58,36 @@ export default function Home() {
             
           </div>
           
-          <div className={style.LoguinContainer}>
+          <form className={style.LoguinContainer} onSubmit={submitHandler}>
 
             <div>
               <div><h1>Utilize o painel agora <br/> mesmo</h1></div>
               
-              <div>
-                <input type="email" name="email" id="emailInput" placeholder="Digite o seu e-mail"/>
-                <input type="password" name="password" id="passInput" placeholder="Digite a sua senha"/>
+              <div >
+                <input 
+                  type="email" 
+                  name="email" 
+                  id="emailInput" 
+                  placeholder="Digite o seu e-mail" 
+                  onChange={e => setData({...data, email: e.target.value})}
+                  value={data.email}
+                />
+
+                <input 
+                  type="password" 
+                  name="password" 
+                  id="passInput" 
+                  placeholder="Digite a sua senha"
+                  onChange={e => setData({...data,pass: e.target.value})} 
+                  value={data.pass}
+                />
                 <span>Esqueci Minha Senha</span>
               </div>
-              
-              <div><button>Entrar</button></div>
+              {(error !== "")?(<div className="error">{error}</div>) : ""}
+              <div><button type="submit">Entrar</button></div>
             </div>
               
-          </div>
+          </form>
 
         </div>
       </div>
